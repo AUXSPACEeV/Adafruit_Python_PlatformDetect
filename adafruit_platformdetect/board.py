@@ -193,6 +193,8 @@ class Board:
                 or self._armbian_id()
                 or self._rk3588_id()
             )
+        elif chip_id == chips.RK3588S:
+            board_id =  self._orange_pi_id()
         elif chip_id == chips.RYZEN_V1605B:
             board_id = self._udoo_id()
         elif chip_id == chips.PENTIUM_N3710:
@@ -475,6 +477,8 @@ class Board:
 
     def _orange_pi_id(self) -> Optional[str]:
         board_value = self.detector.get_device_model()
+        if "Orange Pi 5 Pro" in board_value:
+            return boards.ORANGE_PI_5_PRO
         if "Orange Pi 5 Plus" in board_value:
             return boards.ORANGE_PI_5_PLUS
         if "Orange Pi 5" in board_value:
