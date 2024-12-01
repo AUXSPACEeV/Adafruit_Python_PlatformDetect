@@ -485,7 +485,7 @@ class Board:
             return boards.ORANGE_PI_5
         if "Orange Pi 3B" in board_value:
             return boards.ORANGE_PI_3B
-        return None
+        return boards.ORANGE_PI_5_PRO
 
     def _sama5_id(self) -> Optional[str]:
         """Check what type sama5 board."""

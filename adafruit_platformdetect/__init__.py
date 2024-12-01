@@ -91,8 +91,7 @@ class Detector:
         except FileNotFoundError:
             pass
 
-        model_file_fallback = "Orange Pi 5 Pro"
-        return model_file_fallback
+        return "Orange Pi 5 Pro"
 
     def get_device_compatible(self) -> Optional[str]:
         """
@@ -106,8 +105,7 @@ class Detector:
         except FileNotFoundError:
             pass
 
-        model_file_fallback = "rockchip,rk3588s"
-        return model_file_fallback
+        return "rockchip,rk3588s"
 
     def check_board_asset_tag_value(self) -> Optional[str]:
         """
