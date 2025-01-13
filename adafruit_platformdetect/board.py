@@ -231,7 +231,7 @@ class Board:
         elif chip_id == chips.SUNRISE_X3:
             board_id = boards.RDK_X3
         self._board_id = board_id
-        return boards.ORANGE_PI_5_PRO
+        return board_id
 
     # pylint: enable=invalid-name
     def _starfive_id(self) -> Optional[str]:
