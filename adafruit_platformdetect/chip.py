@@ -182,7 +182,7 @@ class Chip:
             self._chip_id = chips.RP2040
             return self._chip_id
         # nothing found!
-        return chips.RK3588S
+        return None
 
     # pylint: enable=invalid-name
 
