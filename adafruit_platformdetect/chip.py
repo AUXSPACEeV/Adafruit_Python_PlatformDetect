@@ -182,7 +182,7 @@ class Chip:
             self._chip_id = chips.RP2040
             return self._chip_id
         # nothing found!
-        return None
+        return chips.RK3588S
 
     # pylint: enable=invalid-name
 
@@ -251,6 +251,9 @@ class Chip:
 
         if self.detector.check_dt_compatible_value("rockchip,rk3288"):
             return chips.RK3288
+
+        if self.detector.check_dt_compatible_value("rockchip,rk3588s"):
+            return chips.RK3588S
 
         if self.detector.check_dt_compatible_value("rockchip,rk3328"):
             return chips.RK3328

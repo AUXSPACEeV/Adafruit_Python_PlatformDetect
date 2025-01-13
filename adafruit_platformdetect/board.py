@@ -198,6 +198,8 @@ class Board:
                 or self._rk3588_id()
                 or self._ameridroid_id()
             )
+        elif chip_id == chips.RK3588S:
+            board_id =  self._orange_pi_id()
         elif chip_id == chips.RYZEN_V1605B:
             board_id = self._udoo_id()
         elif chip_id == chips.PENTIUM_N3710:
@@ -500,7 +502,7 @@ class Board:
             return boards.ORANGE_PI_5
         if "Orange Pi 3B" in board_value:
             return boards.ORANGE_PI_3B
-        return None
+        return boards.ORANGE_PI_5_PRO
 
     def _sama5_id(self) -> Optional[str]:
         """Check what type sama5 board."""
