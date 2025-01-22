@@ -3,16 +3,12 @@
 # SPDX-License-Identifier: MIT
 
 [build-system]
-requires = [
-    "setuptools",
-    "wheel",
-    "setuptools-scm",
-]
+requires = ["setuptools>=64", "setuptools-scm>=8", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "Adafruit-PlatformDetect"
 description = "Platform detection for use by libraries like Adafruit-Blinka."
-version = "0.0.0+auto.0"
 readme = "README.rst"
 authors = [
     {name = "Adafruit Industries", email = "circuitpython@adafruit.com"}
@@ -28,10 +24,15 @@ classifiers=[
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.7",
 ]
-dynamic = ["dependencies"]
+dynamic = ["dependencies", "version"]
 
 [tool.setuptools]
 packages = ["adafruit_platformdetect", "adafruit_platformdetect.constants"]
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools_scm]
+write_to = "adafruit_platformdetect/_version.py"
+version_scheme = "guess-next-dev"
+local_scheme = "node-and-date"
